@@ -23,9 +23,20 @@
     toolbarbutton#tabs-newtab-button {
         min-width: var(--tab-min-width) !important;
     }
-
-    .tabbrowser-tab {
+    
+    tab[pinned]:not([zen-essential]) > stack {
+        --tab-inline-padding: 8px !important;
+        & > .tab-content {
+            padding: 0 var(--tab-inline-padding) !important;
+            min-width: 0 !important;
+            justify-content: unset !important;
+        }
+    }
+    
+    /* Change tab background to square */
+    tab:not([zen-essential]) .tab-background {
         width: 100% !important;
+        margin-inline: 0 !important;
     }
     
     /* Move topbar buttons in the now empty space */
