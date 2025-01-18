@@ -39,6 +39,10 @@
         margin-inline: 0 !important;
     }
     
+    .tab-icon-stack > * {
+        margin-inline-start: 2px !important;
+    }
+    
     /* Move topbar buttons in the now empty space */
     @media (not (-moz-bool-pref: "zen.view.compact")) and (not (-moz-bool-pref: "zen.view.use-single-toolbar")) and (not (-moz-platform: macos)) {
         #browser:has(#navigator-toolbox:not([zen-right-side="true"])) {
