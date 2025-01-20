@@ -50,10 +50,11 @@
                 overflow: visible !important;
 
                 #zen-appcontent-navbar-container {
-                    margin-left: calc(0px - var(--zen-sidebar-width)) !important;
+                    margin-left: calc(0px - var(--zen-toolbox-max-width)) !important;
+                    padding-left: var(--zen-element-separation);
 
-                    #nav-bar-customization-target > *:first-child {
-                        padding-inline-start: var(--toolbarbutton-outer-padding) !important;
+                    #nav-bar {
+                        margin-inline-start: var(--zen-element-separation);
                     }
                 }
             }
