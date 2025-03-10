@@ -26,12 +26,26 @@
         margin-inline-start: calc(calc(var(--tab-min-width) + var(--tab-block-margin) * 2 - var(--tab-inline-padding) * 2 - 16px) / 2) !important;
     }
 
-    #TabsToolbar-customization-target toolbarbutton > .toolbarbutton-text {
-        transition: flex ease-in-out var(--theme-sidebar_expand_on_hover-transition_speed), padding ease-in-out var(--theme-sidebar_expand_on_hover-transition_speed);
+    /* Same design as tabs for New Tab button and other toolbarbuttons */
+    #TabsToolbar-customization-target toolbarbutton {
+        margin: var(--tab-block-margin) !important;
+        padding: 0 calc(var(--tab-inline-padding) - var(--tab-block-margin)) !important;
+        justify-content: flex-start !important;
+        
+        & > .toolbarbutton-icon {
+            margin-inline-start: calc(calc(var(--tab-min-width) + var(--tab-block-margin) * 2 - var(--tab-inline-padding) * 2 - 16px) / 2) !important;
+            margin-inline-end: var(--toolbarbutton-inner-padding) !important;
+        }
+        
+        & > .toolbarbutton-text {
+            padding: 0 !important;
+            align-items: center !important;
+        }
     }
-
-    toolbarbutton#tabs-newtab-button {
-        min-width: var(--tab-min-width) !important;
+    
+    /* Stop New Tab button from increasing the width */
+    .zen-workspace-tabs-section {
+        width: calc(var(--tab-min-width) + var(--tab-block-margin)) !important;
     }
     
     tab[pinned]:not([zen-essential]) > stack {
@@ -193,11 +207,6 @@
         :has(.tabbrowser-tab:active),
         :has(toolbarbutton[open="true"]:not(#zen-sidepanel-button), #urlbar[open])
     ) {
-        #TabsToolbar-customization-target toolbarbutton > .toolbarbutton-text {
-            flex: 0 !important;
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-        }
 
         /* Show only active/first/no(todo) button*/
         #zen-workspaces-button {
