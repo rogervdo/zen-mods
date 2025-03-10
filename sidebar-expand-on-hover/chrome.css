@@ -16,6 +16,21 @@
         display: none !important;
     }
     
+    /* Support for tabs on the right */
+    #navigator-toolbox[zen-right-side="true"] {
+        direction: rtl !important;
+
+        #titlebar, #zen-sidebar-top-buttons {
+            direction: ltr !important;
+        }
+        
+        @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
+            #nav-bar {
+                direction: ltr !important;
+            }
+        }
+    }
+    
     /* Change tab shape to square when collapsed */
     tab:not([zen-essential]) .tab-background {
         min-width: var(--tab-min-width) !important;
@@ -56,6 +71,18 @@
             justify-content: unset !important;
         }
     }
+
+    @media (not (-moz-bool-pref: "zen.view.compact.hide-toolbar")) and (not (-moz-bool-pref: "zen.view.use-single-toolbar")),
+        (not (-moz-bool-pref: "zen.view.compact")) and (not (-moz-bool-pref: "zen.view.use-single-toolbar")) {
+
+            #navigator-toolbox {
+                margin-top: var(--zen-toolbar-height) !important;
+            }
+
+            #browser:has(#PersonalToolbar[collapsed=false]) #navigator-toolbox {
+                margin-top: calc(var(--zen-toolbar-height) + 2.2em) !important;
+            }
+    }
     
     /* Move topbar buttons in the now empty space */
     @media (not (-moz-bool-pref: "zen.view.compact")) and (not (-moz-bool-pref: "zen.view.use-single-toolbar")) and (not (-moz-platform: macos)) {
@@ -73,18 +100,6 @@
                 }
             }
         }
-    }
-
-    @media not (-moz-bool-pref: "zen.view.compact.hide-toolbar"),
-        (not (-moz-bool-pref: "zen.view.compact")) and (not (-moz-bool-pref: "zen.view.use-single-toolbar")) {
-
-            #navigator-toolbox {
-                margin-top: var(--zen-toolbar-height) !important;
-            }
-
-            #browser:has(#PersonalToolbar[collapsed=false]) #navigator-toolbox {
-                margin-top: calc(var(--zen-toolbar-height) + 2.2em) !important;
-            }
     }
 
     #navigator-toolbox {
