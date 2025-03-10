@@ -94,6 +94,10 @@
         min-width: var(--zen-toolbox-max-width) !important;
         position: relative !important;
 
+        /* 
+        I have no idea how to replicate the browser background, I don't know where the colors come from, the computed values in the inspector don't match anything on screen.
+        This is as close as I was able to get so far.
+        */
         &::before {
             position: absolute;
             content: "";
@@ -102,7 +106,8 @@
             opacity: 0.0;
             transition: 60ms opacity ease-in calc(var(--theme-sidebar_expand_on_hover-transition_speed) - 60ms), width ease-in-out var(--theme-sidebar_expand_on_hover-transition_speed);
             z-index: -1;
-            background: var(--zen-main-browser-background), #000000 !important;
+            background-image: var(--zen-main-browser-background) !important;
+            background-color: var(--lwt-accent-color) !important;
             background-attachment: fixed !important;
             background-size: 2000px !important;
             backdrop-filter: blur(5px) !important;
