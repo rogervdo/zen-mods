@@ -101,7 +101,7 @@
         &::before {
             position: absolute;
             content: "";
-            width: var(--zen-sidebar-width);
+            width: calc(var(--zen-sidebar-width) - var(--zen-toolbox-padding));
             height: 100%;
             opacity: 0.0;
             transition: 60ms opacity ease-in calc(var(--theme-sidebar_expand_on_hover-transition_speed) - 60ms), width ease-in-out var(--theme-sidebar_expand_on_hover-transition_speed);
