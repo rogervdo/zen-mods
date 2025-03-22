@@ -149,6 +149,24 @@
         }
     }
     
+    /* Essentials */
+    #zen-essentials-container {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        overflow-x: scroll !important;
+        
+        > .tabbrowser-tab {
+            flex: 1 !important;
+            /* Todo change this from hardcoded value */
+            min-width: 40px !important;
+            margin-inline: calc(var(--zen-toolbox-padding) - 2px) !important;
+            transition: flex-grow var(--theme-sidebar_expand_on_hover-transition_speed) linear, 
+                width var(--theme-sidebar_expand_on_hover-transition_speed) linear, 
+                margin-inline var(--theme-sidebar_expand_on_hover-transition_speed) linear !important;
+        }
+    }
+    
     /* Hide empty top buttons */
     #zen-sidebar-top-buttons:not(:has(:not(#zen-sidebar-top-buttons-separator, #zen-sidebar-top-buttons-customization-target))) {
         display: none !important;
@@ -240,6 +258,14 @@
                 width: 0 !important;
                 margin-inline: 0 !important;
             }
+        }
+        
+        #zen-essentials-container:has([selected]) > .tabbrowser-tab:not([selected]),
+        #zen-essentials-container:not(:has([selected])) > .tabbrowser-tab:not(:first-child) {
+                flex-grow: 0 !important;
+                width: 0 !important;
+                min-width: 0 !important;
+                margin-inline: 0 !important;
         }
         
         toolbarspring {
