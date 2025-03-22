@@ -162,7 +162,7 @@
             min-width: 40px !important;
             margin-inline: calc(var(--zen-toolbox-padding) - 2px) !important;
             transition: flex-grow var(--theme-sidebar_expand_on_hover-transition_speed) linear, 
-                width var(--theme-sidebar_expand_on_hover-transition_speed) linear, 
+                min-width var(--theme-sidebar_expand_on_hover-transition_speed) linear, 
                 margin-inline var(--theme-sidebar_expand_on_hover-transition_speed) linear !important;
         }
     }
