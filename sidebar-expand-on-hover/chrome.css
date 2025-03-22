@@ -12,6 +12,12 @@
     --zen-toolbox-min-width: 1px !important;
     --zen-sidebar-width: var(--zen-toolbox-max-width) !important;
     
+    @media (-moz-bool-pref: "theme.sidebar_expand_on_hover.hide_workspace_indicator") {
+        #zen-current-workspace-indicator-container {
+            display: none !important;
+        }
+    }
+    
     #zen-sidebar-splitter {
         display: none !important;
     }
