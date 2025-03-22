@@ -242,9 +242,15 @@
             }
         }
         
+        toolbarspring {
+            flex-grow: 0 !important;
+            width: 0 !important;
+            min-width: 0 !important;
+            margin-inline: 0 !important;
+        }
+        
         /*Workaround for invisible top buttons seperator*/
-        #zen-sidebar-top-buttons-customization-target:not(:has(#zen-sidebar-top-buttons-separator)) > :not(:first-child),
-        #zen-sidebar-top-buttons-customization-target:has(#zen-sidebar-top-buttons-separator) > :not(:nth-child(2))
+        #zen-sidebar-top-buttons-customization-target > :not(:nth-child(1 of toolbarbutton, toolbaritem))
         {
             flex-grow: 0 !important;
             width: 0 !important;
